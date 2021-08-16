@@ -1,0 +1,9 @@
+# вывод информации в файл
+Get-Date | Out-File K:\virtual\github\time.txt -Append
+Get-Host | Out-File K:\virtual\github\host.txt -Append
+Get-CimInstance -ClassName Win32_QuickFixEngineering | Out-File K:\virtual\github\updatesecutrity.txt -Append
+Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" |  Measure-Object -Property FreeSpace,Size -Sum |    Select-Object -Property Property,Sum | Out-File K:\virtual\github\freespace.txt -Append
+Get-ComputerInfo -Property OsVersion | Out-File K:\virtual\github\Osversion.txt -Append
+Get-ComputerInfo -Property OsHotFixes | Out-File K:\virtual\github\OsHotFix.txt -Append 
+Get-Process firefox | Format-Table | Out-File K:\virtual\github\firefoxinfo.txt -Append 
+Get-ComputerInfo -Property OsInstallDate | Out-File K:\virtual\github\Installdate.txt -Append 
