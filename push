@@ -1,0 +1,6 @@
+cd K:\virtual\github
+$date = (Get-Date)
+git add .
+git commit -m "Update informations for $date"
+git push https://github.com/vandermeh/saves
+git fetch https://github.com/vandermeh/saves
